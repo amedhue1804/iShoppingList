@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".code.activities.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/skyblue"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <TextView
+            android:id="@+id/TittleApp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="iShoppingList"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textAlignment="center"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            tools:ignore="HardcodedText" />
+
+        <ListView
+            android:id="@+id/LvProducts"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+        </ListView>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_margin="30dp">
+
+            <Button
+                android:id="@+id/btnnew"
+                android:layout_width="147dp"
+                android:layout_height="70dp"
+                android:layout_margin="15dp"
+                android:backgroundTint="@color/blue"
+                android:padding="15dp"
+                android:text="Añadir nuevo producto"
+                android:textColor="@color/white"
+                tools:ignore="ButtonStyle,HardcodedText" />
+
+            <Button
+                android:id="@+id/btnPending"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:text="Añadir a pendientes"
+                android:padding="15dp"
+                android:layout_margin="15dp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/blue"
+                tools:ignore="ButtonStyle,HardcodedText"
+                />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
