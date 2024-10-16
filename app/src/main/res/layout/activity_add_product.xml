@@ -45,7 +45,7 @@
             android:ems="15"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:layout_margin="30dp"
+            android:layout_margin="10dp"
             android:inputType="text"
             android:hint="Nombre del producto"
             tools:ignore="HardcodedText" />
@@ -57,7 +57,7 @@
             android:ems="15"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:layout_margin="30dp"
+            android:layout_margin="10dp"
             android:inputType="text"
             android:hint="Nota Descriptiva"
             tools:ignore="HardcodedText" />
@@ -68,7 +68,27 @@
             android:layout_height="50dp"
             android:text="Pendiente   "
             tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml"
-            android:layout_margin="30dp"
+            android:layout_margin="15dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Switch
+            android:id="@+id/sw2"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Lactosa   "
+            tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml"
+            android:layout_margin="15dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Switch
+            android:id="@+id/sw3"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Gluten   "
+            tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml"
+            android:layout_margin="15dp"
             android:textSize="20sp"
             android:textStyle="bold" />
 

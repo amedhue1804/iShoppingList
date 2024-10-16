@@ -21,6 +21,7 @@ import com.example.ishoppinglist.code.models.Product;
 
 public class EditDetailActivity extends AppCompatActivity {
 
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +37,8 @@ public class EditDetailActivity extends AppCompatActivity {
         EditText detailsEdit = findViewById(R.id.etDescriptionEdit);
         @SuppressLint("UseSwitchCompatOrMaterialCode")
         Switch sw2 = findViewById(R.id.swChangueStatus);
+        Switch sw3 = findViewById(R.id.swChangueLactosa);
+        Switch sw4 = findViewById(R.id.swChangueGluten);
         Button btnCancel = findViewById(R.id.btnCancel4);
         Button btnSave = findViewById(R.id.btnSave3);
 
@@ -48,7 +51,9 @@ public class EditDetailActivity extends AppCompatActivity {
         if (edit != null) {
             nameEdit.setText(edit.getName());
             detailsEdit.setText(edit.getDescription());
-            sw2.setChecked(!edit.isState()); // Invertimos el estado para el Switch
+            sw2.setChecked(!edit.isState()); // Invertimos el estado para los Switch
+            sw3.setChecked(!edit.isLactosa());
+            sw4.setChecked(!edit.isGluten());
         }
 
         btnCancel.setOnClickListener(new View.OnClickListener() {
@@ -76,7 +81,9 @@ public class EditDetailActivity extends AppCompatActivity {
                 if (edit != null) {
                     edit.setName(nameEdit.getText().toString());
                     edit.setDescription(detailsEdit.getText().toString());
-                    edit.setState(!sw2.isChecked()); // Invertimos el estado para guardar
+                    edit.setState(!sw2.isChecked()); // Invertimos los estado para guardar
+                    edit.setLactosa(!sw3.isChecked());
+                    edit.setGluten(!sw4.isChecked());
                     DataBase.updateProduct(edit); // Actualizamos el producto en la base de datos
                     Toast.makeText(EditDetailActivity.this, "Producto actualizado con éxito", Toast.LENGTH_SHORT).show();
                     Intent main = new Intent(EditDetailActivity.this, MainActivity.class);

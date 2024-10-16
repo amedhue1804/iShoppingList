@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 
 import com.example.ishoppinglist.R;
 import com.example.ishoppinglist.code.database.DataBase;
@@ -34,9 +35,19 @@ public class ProductAdapter extends ArrayAdapter<Product> {
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_product, parent, false);
         }
+        // Si el producto contiene gluten de ese producto es #D7CCC8
+        if (product.isGluten() && product.isLactosa()) {
+            int glutenlactosaColor = ContextCompat.getColor(getContext(), R.color.glutenylactosa);
+            convertView.setBackgroundColor(glutenlactosaColor);
+        } else if (product.isLactosa()) {
+            int lactosaColor = ContextCompat.getColor(getContext(), R.color.lactosa);
+            convertView.setBackgroundColor(lactosaColor);
+        } else if (product.isGluten()) {
+            int glutenColor = ContextCompat.getColor(getContext(), R.color.gluten);
+            convertView.setBackgroundColor(glutenColor); // Set background color of the item layout
+        }
 
         // Si la vista ya existe, reutilizamos la vista actual
-
         // Obtenemos los componentes de la vista
 
         TextView tvProductName = convertView.findViewById(R.id.tvNameProduct);

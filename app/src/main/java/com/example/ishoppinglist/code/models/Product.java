@@ -9,6 +9,8 @@ public class Product implements Serializable {
     private String name;
     private String description;
     private boolean state;
+    private boolean lactosa;
+    private boolean gluten;
 
     // Constructor por defecto
     public Product (){
@@ -52,9 +54,26 @@ public class Product implements Serializable {
         return state;
     }
 
+    public boolean isGluten() {
+        return gluten;
+    }
+
+    public boolean isLactosa() {
+        return lactosa;
+    }
+
     public void setState(boolean state) {
         this.state = state;
     }
+
+    public void setGluten(boolean gluten) {
+        this.gluten = gluten;
+    }
+
+    public void setLactosa(boolean lactosa) {
+        this.lactosa = lactosa;
+    }
+
 
     // Metodo toString para imprimir el objeto Product como un string
     @Override
@@ -64,6 +83,8 @@ public class Product implements Serializable {
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", state=" + state +
+                ", lactosa=" + lactosa +
+                ", gluten=" + gluten +
                 '}';
     }
 }

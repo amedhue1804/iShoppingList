@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -51,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
             intentDetail.putExtra("product", selectedProduct);
             startActivity(intentDetail);
         });
+
+        //Si el producto tiene lactosa, cambiamos el color de fondo del ListView
+
+
 
         // Configuramos el OnClickListener para los botones usando if-else
         View.OnClickListener buttonClickListener = new View.OnClickListener() {

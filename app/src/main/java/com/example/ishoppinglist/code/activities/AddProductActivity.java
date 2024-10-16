@@ -39,6 +39,10 @@ public class AddProductActivity extends AppCompatActivity {
         EditText productDescriptionInput = findViewById(R.id.etNewDescription);
         @SuppressLint("UseSwitchCompatOrMaterialCode")
         Switch productStateSwitch = findViewById(R.id.sw1);
+        @SuppressLint("UseSwitchCompatOrMaterialCode")
+        Switch productGlutenSwitch = findViewById(R.id.sw2);
+        @SuppressLint("UseSwitchCompatOrMaterialCode")
+        Switch productLactosaSwitch = findViewById(R.id.sw3);
         Button saveButton = findViewById(R.id.btnSave2);
         Button cancelButton = findViewById(R.id.btnCancel3);
 
@@ -67,6 +71,8 @@ public class AddProductActivity extends AppCompatActivity {
                 newProduct.setName(productNameInput.getText().toString());
                 newProduct.setDescription(productDescriptionInput.getText().toString());
                 newProduct.setState(productStateSwitch.isChecked());
+                newProduct.setGluten(productGlutenSwitch.isChecked());
+                newProduct.setLactosa(productLactosaSwitch.isChecked());
 
                 // Validamos que el nombre no esté vacío
                 if (newProduct.getName().isEmpty()){
@@ -85,6 +91,11 @@ public class AddProductActivity extends AppCompatActivity {
                     productNameInput.setText("");
                     productDescriptionInput.setText("");
                     productStateSwitch.setChecked(false);
+                    productGlutenSwitch.setChecked(false);
+                    productLactosaSwitch.setChecked(false);
+                    Toast saveToast = new Toast(AddProductActivity.this);
+                    saveToast.setText("Producto guardado");
+                    saveToast.show();
                     Intent returnIntent = new Intent(AddProductActivity.this, MainActivity.class);
                     startActivity(returnIntent);
                 }

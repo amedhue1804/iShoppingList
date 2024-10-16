@@ -37,6 +37,8 @@ public class DetailActivity extends AppCompatActivity {
         TextView productNameDetails = findViewById(R.id.tvNameDetails);
         TextView productDescriptionDetails = findViewById(R.id.tvDescriptionDetails);
         TextView productStateDetails = findViewById(R.id.tvStateDetails);
+        TextView productGlutenDetails = findViewById(R.id.tvGlutenDetails);
+        TextView productLactosaDetails = findViewById(R.id.tvLactosaDetails);
         Button editButton = findViewById(R.id.btnEdit);
         Button cancelButton = findViewById(R.id.btnCancel);
 
@@ -50,11 +52,20 @@ public class DetailActivity extends AppCompatActivity {
             productIdDetails.setText(String.valueOf(product.getId()));
             productNameDetails.setText(product.getName());
             productDescriptionDetails.setText(product.getDescription());
-
             if (product.isState()) {
                 productStateDetails.setText("Pendiente de compra");
             } else {
                 productStateDetails.setText("No pendiente");
+            }
+            if (product.isGluten()) {
+                productGlutenDetails.setText("Sí");
+            } else {
+                productGlutenDetails.setText("No");
+            }
+            if (product.isLactosa()) {
+                productLactosaDetails.setText("Sí");
+            } else {
+                productLactosaDetails.setText("No");
             }
         }
 
